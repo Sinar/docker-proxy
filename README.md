@@ -3,6 +3,12 @@ docker-proxy
 
 HTTP proxy powered by Privoxy behind Tor to be used for scraping or anonymous browsing.
 
+## Express Mode
+---
+
+It's now available at Docker Hub, you can start by just doing this
+
+`$ docker run -d -p 8118:8118 sinar/proxy`
 
 ##How to
 ---
