@@ -1,12 +1,10 @@
 FROM ubuntu:14.04
 MAINTAINER motionman@sinarproject.org
 
-RUN apt-get update -q
-RUN apt-get upgrade -qy
-RUN apt-get install -qy language-pack-en tor privoxy supervisor
-
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+RUN apt-get update -q && \
+    apt-get upgrade -qy && \
+    apt-get install -qy tor privoxy supervisor && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD etc/tor/torrc /etc/tor/torrc
 ADD etc/privoxy/config /etc/privoxy/config
